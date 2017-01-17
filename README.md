@@ -20,3 +20,8 @@ python wind_chill_calculator.py
 ```
 
 and provide the requested information.
+
+
+## Heat index calculator
+
+## Dew point calculator
