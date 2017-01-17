@@ -17,7 +17,9 @@ def heat_index(t, h):
     c8 = 8.5282e-4
     c9 = -1.99e-6
 
-    hi = c1 + c2*t + c3*h + c4*t*h + c5*(t**2) + c6*(h**2) + c7*(t**2)*h + c8*t*(h**2) + c9*(t**2)*(h**2)
+    hi = t
+    if t>80.:
+        hi = c1 + c2*t + c3*h + c4*t*h + c5*(t**2) + c6*(h**2) + c7*(t**2)*h + c8*t*(h**2) + c9*(t**2)*(h**2)
     return hi
        
 

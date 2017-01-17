@@ -1,7 +1,7 @@
 import os, sys, math
 
 def dew_point(t, rh):
-    '''t is the air temperaturs
+    '''t is the air temperature
        rh is the relative humidity
        tdp is temperature of dew point
        https://en.wikipedia.org/wiki/Dew_point
@@ -11,8 +11,11 @@ def dew_point(t, rh):
     b = 18.678
     c = 257.14
     d = 234.5
-    gamma = math.log(rh/100. * math.exp((b-t/d)*(t/(c+t))))
-    tdp = (c*gamma) / (b-gamma)
+    gamma = 0.
+    tdp = t
+    if rh<100.:
+        gamma = math.log(rh/100. * math.exp((b-t/d)*(t/(c+t))))
+        tdp = (c*gamma) / (b-gamma)
     return tdp
 
 

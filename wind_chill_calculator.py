@@ -4,7 +4,9 @@ def windchill(t, ws):
     '''t is temperature in Celsius.
        ws is wind speed in km/h
        wc is the wind chill'''
-    wc = 13.12 + 0.6215*t - 11.37*(ws**0.16) + 0.3965*t*(ws**0.16)
+    wc = t
+    if t<10 and ws>4.8:
+        wc = 13.12 + 0.6215*t - 11.37*(ws**0.16) + 0.3965*t*(ws**0.16)
     return wc
 
 if __name__=="__main__":
